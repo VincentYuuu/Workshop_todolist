@@ -1,15 +1,16 @@
 // TO DO
-document.addEventListener('DOMContentLoaded', () => {
-  //const close = document.querySelectorAll('.close')
-
-  //close.map.addEventListener('click', function(){
-  //  console.log(this)
-  //  console.log(this.parentNode.parentNode);
-  //})
-
+document.addEventListener('DOMContentLoaded', function() {
   const ul = document.querySelector('ul')
 
   ul.addEventListener('click', (e)=> {
-    ul.removeChild(e.target.parentNode)
+    const targetTagName = e.target.tagName
+    switch (targetTagName) {
+      case 'LI':
+        e.target.classList.toggle('checked')  
+        break;
+      case 'SPAN':
+        ul.removeChild(e.target.parentNode)
+        break;
+    }
   })
 })
