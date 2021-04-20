@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
       case 'LI':
         e.target.classList.toggle('checked')  
         break;
+      case 'SPAN':
+        ul.removeChild(e.target.parentNode)
+        break;
     }
   })
 })
